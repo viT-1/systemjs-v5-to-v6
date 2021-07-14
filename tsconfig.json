@@ -1,0 +1,15 @@
+{
+	"compilerOptions": {
+		"allowJs": true,
+		"module": "system",
+		"target": "es5",
+		"moduleResolution": "node",
+		"outFile": "dist/bundle-system.js",
+		"paths": {
+			"@common/*": ["./src/common/*"]
+		},
+	},
+	"include": [
+		"**/*.ts"
+	]
+}

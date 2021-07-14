@@ -1,0 +1,36 @@
+{
+	"name": "systemjs-v5-v6",
+	"version": "0.0.1",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/viT-1/systemjs-v5-v6.git"
+	},
+	"description": "An examlple how to bundle typescript app to ES5 with SystemJS",
+	"keywords": [
+		"typescript",
+		"nobundle",
+		"systemjs"
+	],
+	"scripts": {
+		"clean:dist": "rm -rf ./dist",
+		"clean:empty": "remove-directories --dist",
+		"predeploy": "npm run clean:dist",
+		"deploy": "tsc",
+		"mk:assets": "mkdirp ./dist/assets/systemjs",
+		"copy:assets": "cp -rv ./node_modules/systemjs/dist/* ./dist/assets/systemjs",
+		"copy:src": "cp -rv ./src/* ./dist",
+		"del:srcts": "npx rimraf ./dist/**/*.ts",
+		"copyfiles": "npm run copy:src && npm run del:srcts && npm run mk:assets && npm run copy:assets",
+		"postdeploy": "npm run copyfiles && npm run clean:empty",
+		"www": "node -r esm ./server.js"
+	},
+	"dependencies": {
+		"systemjs": "5.0.0"
+	},
+	"devDependencies": {
+		"esm": "3.2.25",
+		"mkdirp": "1.0.4",
+		"remove-empty-directories": "0.0.1",
+		"typescript": "^4.2.4"
+	}
+}
