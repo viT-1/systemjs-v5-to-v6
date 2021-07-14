@@ -1,0 +1,1 @@
+Simple test-project for SystemJS issue [2336](https://github.com/systemjs/systemjs/issues/2336)
