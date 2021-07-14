@@ -1,6 +1,6 @@
 {
 	"name": "systemjs-v5-v6",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/viT-1/systemjs-v5-v6.git"
@@ -17,7 +17,10 @@
 		"predeploy": "npm run clean:dist",
 		"deploy": "tsc",
 		"mk:assets": "mkdirp ./dist/assets/systemjs",
-		"copy:assets": "cp -rv ./node_modules/systemjs/dist/* ./dist/assets/systemjs",
+		"copy:bluebird": "cp -rv ./node_modules/bluebird/js/browser/bluebird.core.min.js ./dist/assets",
+		"copy:systemjs": "cp -rv ./node_modules/systemjs/dist/* ./dist/assets/systemjs",
+		"copy:fetch": "cp -rv ./node_modules/whatwg-fetch/dist/fetch.umd.js ./dist/assets",
+		"copy:assets": "npm run copy:bluebird && npm run copy:fetch && npm run copy:systemjs",
 		"copy:src": "cp -rv ./src/* ./dist",
 		"del:srcts": "npx rimraf ./dist/**/*.ts",
 		"copyfiles": "npm run copy:src && npm run del:srcts && npm run mk:assets && npm run copy:assets",
@@ -25,7 +28,9 @@
 		"www": "node -r esm ./server.js"
 	},
 	"dependencies": {
-		"systemjs": "5.0.0"
+		"bluebird": "3.7.2",
+		"systemjs": "5.0.0",
+		"whatwg-fetch": "3.6.2"
 	},
 	"devDependencies": {
 		"esm": "3.2.25",

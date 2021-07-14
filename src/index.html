@@ -4,6 +4,12 @@
 	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
 	<meta content="utf-8" http-equiv="encoding">
 	<link rel="shortcut icon" href="data:;base64,=">
+	<script>
+		if (typeof Promise === 'undefined')
+			document.write('<script src="assets/bluebird.core.min.js"><\/script>');
+		if (typeof fetch === 'undefined')
+			document.write('<script src="assets/fetch.umd.js"><\/script>');
+	</script>
 	<script src="assets/systemjs/system.js"></script>
 	<script src="assets/systemjs/extras/named-exports.js"></script>
 	<script src="assets/systemjs/extras/named-register.js"></script>
