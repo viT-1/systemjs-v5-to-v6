@@ -8,6 +8,9 @@
 		"paths": {
 			"@common/*": ["./src/common/*"]
 		},
+		"typeRoots": [
+			"node_modules/@types"
+		]
 	},
 	"include": [
 		"**/*.ts"

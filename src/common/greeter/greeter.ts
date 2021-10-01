@@ -1,3 +1,5 @@
+import { msgGreet } from './greeter-conf';
+
 export class Greeter {
 	private greeting: string;
 
@@ -6,6 +8,6 @@ export class Greeter {
 	}
 
 	public greet(): string {
-		return `Nice to see you, ${this.greeting}`;
+		return `${msgGreet} ${this.greeting}`;
 	}
 }
